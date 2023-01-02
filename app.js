@@ -2,6 +2,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const https = require("https");
+const PORT = process.env.PORT || 3003;
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
@@ -34,6 +35,6 @@ app.post("/", function(req,res){
     
 });
 
-app.listen(3002, function(){
-    console.log("Listening port 3002.");
+app.listen(PORT, function(){
+    console.log(`Listening port ${PORT}.`);
 });
